@@ -56,12 +56,13 @@ const elBox = document.querySelector('.js-box');
 const setTime = (timeout, node) => {
   const elText = document.createElement('h3');
 
-  elText.setAttribute(
-    'class',
-    'text-center text-white py-w px-3 bg-warning rounded-circle'
-  );
   elText.style.display = 'inline-block';
   elText.style.padding = '10px 20px';
+
+  elText.setAttribute(
+    'class',
+    'text-center text-white ms-2 py-2 px-3 bg-warning rounded-circle'
+  );
 
   node.appendChild(elText);
 
