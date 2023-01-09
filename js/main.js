@@ -58,8 +58,9 @@ const setTime = (timeout, node) => {
 
   elText.setAttribute(
     'class',
-    'text-center text-white d-inline-block bg-warning rounded-circle'
+    'text-center text-white py-w px-3 bg-warning rounded-circle'
   );
+  elText.style.display = 'inline-block';
   elText.style.padding = '10px 20px';
 
   node.appendChild(elText);
@@ -73,8 +74,7 @@ const setTime = (timeout, node) => {
 
   setTimeout(() => {
     clearInterval(interval);
-    elText.textContent = '';
-    elText.style.padding = '0';
+    elBox.removeChild(elText);
   }, output * 1000);
   timeout.value = '';
 };
