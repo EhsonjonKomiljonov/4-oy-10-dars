@@ -49,15 +49,18 @@
 
 // ============================================ UY ISHI ================================================
 
-const elForm = document.querySelector(".js-form");
-const elInput = document.querySelector(".js-input");
-const elBox = document.querySelector(".js-box");
+const elForm = document.querySelector('.js-form');
+const elInput = document.querySelector('.js-input');
+const elBox = document.querySelector('.js-box');
 
 const setTime = (timeout, node) => {
+  const elText = document.createElement('h3');
 
-  const elText = document.createElement("h3");
-
-  elText.setAttribute("class", "text-center bg-warning text-white d-inline-block py-2 px-3 rounded-circle");
+  elText.setAttribute(
+    'class',
+    'text-center text-white d-inline-block bg-warning rounded-circle'
+  );
+  elText.style.padding = '10px 20px';
 
   node.appendChild(elText);
 
@@ -69,15 +72,16 @@ const setTime = (timeout, node) => {
   }, 1000);
 
   setTimeout(() => {
-    elBox.innerHTML = "";
     clearInterval(interval);
+    elText.textContent = '';
+    elText.style.padding = '0';
   }, output * 1000);
   timeout.value = '';
 };
 
-elForm.addEventListener("submit", (evt) => {
+elForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  if(elInput.value != ''){
-    setTime(elInput, elBox)
+  if (elInput.value != '') {
+    setTime(elInput, elBox);
   }
 });
